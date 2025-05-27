@@ -61,7 +61,7 @@ function Login(): React.JSX.Element {
 
         {/* 登录按钮 - 添加在输入框下方 */}
         <Button
-          onPress={() => setWebViewVisible(true)}
+          onPress={() => navigation.navigate('LoginAfter')}
           mode="contained"
           style={styles.loginButton}
           buttonColor="orange"

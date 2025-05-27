@@ -1,4 +1,4 @@
-import { TextInput, Button, Provider as PaperProvider, Appbar, useTheme   } from 'react-native-paper';
+import { TextInput, Button, Provider as PaperProvider, Appbar, useTheme ,Switch   } from 'react-native-paper';
 import React, { useState } from 'react';
 import {
   StyleSheet,
@@ -51,25 +51,22 @@ const [TimePickerVisible, setTimePickerVisible] = useState(false);
     setTime({ hours, minutes });
     setTimePickerVisible(false);
   };
+const [isSwitchOn, setIsSwitchOn] = React.useState(false);
 
+  const onToggleSwitch = () => setIsSwitchOn(!isSwitchOn);
   return (
 
 
 
     <PaperProvider>
-    <Appbar.Header>
-                    <Appbar.BackAction onPress={() => {}} />
-                    <Appbar.Content title="Title" />
-                    <Appbar.Action icon="calendar" onPress={() => {}} />
-                    <Appbar.Action icon="magnify" onPress={() => {}} />
-                  </Appbar.Header>
+
     <ScrollView>
       <View style={styles.container}>
 
 
 
         <View style={styles.inputContainer}>
-
+<Switch value={isSwitchOn} onValueChange={onToggleSwitch} />
               <TextInput
                                 mode="outlined"
                                 label="时间"

@@ -16,7 +16,7 @@ type RootStackParamList = {
 
 //type LoginScreenNavigationProp = NativeStackNavigationProp<RootStackParamList, 'Login'>;
 
-function Text(): React.JSX.Element {
+function PageTest(): React.JSX.Element {
   const navigation = useNavigation<LoginScreenNavigationProp>();
   const [username, setUsername] = useState(''); // State variable for TextInput value
 
@@ -29,26 +29,14 @@ function Text(): React.JSX.Element {
     <View style={styles.container}>
 
 
-      <View style={styles.inputContainer}>
-        {/* 手机号/邮箱输入框 */}
-        <TextInput
-          mode="outlined"
-          label="用户名/电话号码"
-          value={username}
-          onChangeText={(text) => setUsername(text)}
-          right={<TextInput.Affix text="/100" />}
-        />
-        <Text>忘记用户名？</Text>
-        {/* 登录按钮 - 添加在输入框下方 */}
-        <Button
-          mode="contained"
-          style={styles.loginButton}
-          buttonColor="orange"
-          onPress={handleButtonPress}
-        >
-          继续
-        </Button>
-      </View>
+     <Button
+             mode="contained"
+             style={styles.wechatButton}
+             buttonColor="#07C160"
+             onPress={() => console.log('登录按钮被点击')}
+           >
+             WECHAT LOGIN
+           </Button>
 
     </View>
   );
@@ -56,9 +44,8 @@ function Text(): React.JSX.Element {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    padding: 20,
-    marginTop: 250
+
+
   },
   brandText: {
     fontSize: 18,
@@ -83,7 +70,7 @@ const styles = StyleSheet.create({
   },
   wechatButton: {
 
-      paddingVertical: 8, // 垂直内边距
+
     },
   // 其他保留的样式...
   sectionContainer: {
@@ -109,4 +96,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Text;
+export default PageTest;
